@@ -26,4 +26,8 @@ COPY --from=build /app/target/*.jar app.jar
 # expose default Java web port
 EXPOSE 8080
 
-CMD ["java", "-jar", "app.jar"]
+# copy the war from build stage
+COPY --from=build /app/target/*.war app.war
+
+CMD ["java", "-jar", "app.war"]
+
