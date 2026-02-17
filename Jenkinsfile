@@ -34,9 +34,15 @@ pipeline {
 
         stage('Deploy Container') {
             steps {
-                sh 'docker rm -f hostel-app || true'
-                sh "docker run -d --name hostel-app -p 8081:8080 ${IMAGE_NAME}:latest"
-            }
-        }
+               script {
+                    sh '''
+                      docker stop hostel-app || true
+                      docker rm hostel-app || true
+                      docker run -d --name hostel-app -p 8081:8080 ritikawork/hostelmanagement1:latest
+                   '''
+                 }
+             }
+         }
+
     }
 }
