@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKERHUB_CREDENTIALS = 'dockerhub-creds'   // create this in Jenkins later 
-        IMAGE_NAME = 'riskwork/hostelmanagement1'   // ← YOURS is ready!
+        IMAGE_NAME = 'ritikakwork/hostelmanagement1'   // ← YOURS is ready!
     }
 
     stages {
