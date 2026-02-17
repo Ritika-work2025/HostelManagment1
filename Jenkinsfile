@@ -35,7 +35,7 @@ pipeline {
         stage('Deploy Container') {
             steps {
                 sh 'docker rm -f hostel-app || true'
-                sh "docker run -d --name hostel-app -p 8080:8080 ${IMAGE_NAME}:latest"
+                sh "docker run -d --name hostel-app -p 8081:8080 ${IMAGE_NAME}:latest"
             }
         }
     }
